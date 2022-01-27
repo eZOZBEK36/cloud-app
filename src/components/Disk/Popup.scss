@@ -1,0 +1,63 @@
+._popup {
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 50;
+	height: 100%;
+	display: flex;
+	position: fixed;
+	transform: scale(0);
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease 0s;
+	background-color: #00000066;
+	&._open {
+		transform: scale(1);
+	}
+	&__content {
+		width: 400px;
+		overflow: hidden;
+		border-radius: 18px;
+		background-color: #fff;
+		padding: 18px 30px 18px 18px;
+		box-shadow: 4px 4px 4px rgba(92, 92, 92, 0.4);
+	}
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__close {
+		width: 24px;
+		height: 24px;
+		cursor: pointer;
+		position: relative;
+		div {
+			width: 24px;
+			height: 3px;
+			position: absolute;
+			background-color: #566885;
+			&:nth-child(1) {
+				top: calc(50% - 1px);
+				transform: rotate(45deg);
+			}
+			&:nth-child(2) {
+				top: calc(50% - 1px);
+				transform: rotate(-45deg);
+			}
+		}
+	}
+	&__title {
+		font-size: 18px;
+		font-weight: 500;
+	}
+	&__form {
+		margin: 18px 0;
+	}
+	&__create {
+		text-align: end;
+		button {
+			width: 120px !important;
+		}
+	}
+}

@@ -1,0 +1,48 @@
+._select {
+	width: 100px;
+	height: 26px;
+	display: flex;
+	padding: 0 5px;
+	cursor: pointer;
+	position: relative;
+	margin: 0 20px 0 10px;
+	transition: transform 0.3s ease 0s;
+	@media (any-hover: hover) {
+		&:hover {
+			transform: scale(1.05);
+		}
+	} 
+}
+._options {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #fff;
+	transition: all 0.3s ease 0s;
+	div {
+		height: 18px;
+		padding: 5px;
+		transition: all 0.3s ease 0s;
+		&:nth-child(2){
+			padding: 0 5px;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				transform: scale(1.05);
+			}
+		}
+	}
+	transform: translate(0, 100%);
+}
+._select_title {
+	width: 100%;
+	display: flex;
+	column-gap: 5px;
+	align-items: center;
+	align-content: flex-start;
+	justify-content: space-between;
+	img {
+		transition: all 0.3s ease 0s;
+	}
+}

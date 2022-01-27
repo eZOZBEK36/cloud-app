@@ -1,0 +1,32 @@
+.registration {
+	width: 537px;
+	overflow: hidden;
+	padding: 25px 33px;
+	border-radius: 27px;
+	background: #ffffff;
+	box-sizing: border-box;
+	box-shadow: 4px 4px 4px rgba(92, 92, 92, 0.25);
+	// filter: drop-shadow(4px 4px 4px rgba(92, 92, 92, 0.25));
+	&__header {
+		font-size: 28px;
+		font-weight: 700;
+		line-height: 33px;
+		text-align: center;
+	}
+	div:last-child {
+		text-align: end;
+	}
+	&__btn {
+		width: 118px;
+		height: 32px;
+		border: none;
+		color: #fff;
+		cursor: pointer;
+		font-size: 22px;
+		font-weight: 500;
+		line-height: 26px;
+		border-radius: 12px;
+		background: #566885;
+		margin: 23px 0px 0px 0px;
+	}
+}

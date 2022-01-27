@@ -1,0 +1,192 @@
+.filelist {
+	display: grid;
+	cursor: pointer;
+	padding: 5px 15px;
+	align-items: center;
+	transition: all 0.3s ease 0s;
+	border-bottom: 2px solid #566885;
+	grid-template-columns: 62px 4fr repeat(4, 1fr);
+	@media (any-hover: hover) {
+		&:hover {
+			transform: scale(1.02);
+			&._dir {
+				.filelist__date {
+					grid-column-start: 4;
+				}
+				.filelist__size {
+					grid-column-start: 5;
+				}
+			}
+			.filelist__date {
+				grid-column-start: auto;
+			}
+			.filelist__size {
+				grid-column-start: auto;
+			}
+			.filelist__download,
+			.filelist__delete {
+				display: block;
+			}
+		}
+	}
+	&__img {
+		width: 48px;
+		height: 48px;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&__name {
+	}
+	&__date {
+		grid-column-start: 5;
+	}
+	&__size {
+		grid-column-start: 6;
+	}
+	&__download,
+	&__delete {
+		width: 60px;
+		height: 34px;
+		display: none;
+		button {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			cursor: pointer;
+			border-radius: 30px;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid #566885;
+			background-color: transparent;
+			@media (any-hover: hover) {
+				&:hover {
+					transform: scale(1.04);
+				}
+			}
+		}
+	}
+}
+.file._bigplate,
+.file._plate {
+	cursor: pointer;
+	.file__header {
+		position: relative;
+	}
+	.file__img {
+		overflow: hidden;
+		position: absolute;
+		backface-visibility: hidden;
+		transition: all 0.3s ease 0s;
+		transform: perspective(1000px) rotateY(0deg);
+	}
+	.file__name {
+		display: flex;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+		div:nth-child(1) {
+			padding: 2px 0;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+	}
+	.file__actions {
+		top: 0;
+		left: 0;
+		margin: -3px;
+		padding: 3px;
+		width: 128px;
+		row-gap: 10px;
+		display: flex;
+		height: 128px;
+		overflow: hidden;
+		position: absolute;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		backface-visibility: hidden;
+		transition: all 0.3s ease 0s;
+		transform: perspective(1000px) rotateY(-180deg);
+		.file__download,
+		.file__delete {
+			width: 100%;
+			height: 34px;
+			button {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				cursor: pointer;
+				border-radius: 30px;
+				align-items: center;
+				justify-content: center;
+				border: 1px solid #566885;
+				background-color: transparent;
+				@media (any-hover: hover) {
+					&:hover {
+						transform: scale(1.04);
+					}
+				}
+			}
+		}
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			.file__actions {
+				transform: perspective(1000px) rotateY(0deg);
+			}
+			.file__img {
+				transform: perspective(1000px) rotateY(180deg);
+			}
+		}
+	}
+}
+.file._bigplate {
+	.file__header {
+		width: 128px;
+		height: 128px;
+	}
+	.file__img {
+		top: 0;
+		left: 0;
+		width: 128px;
+		height: 128px;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.file__name {
+		font-size: 18px;
+		max-width: 128px;
+		font-weight: 500;
+		padding: 0 0 5px 0;
+	}
+}
+.file._plate {
+	.file__header {
+		width: 98px;
+		height: 98px;
+	}
+	.file__name {
+		max-width: 98px;
+		font-size: 16.5px;
+	}
+	.file__actions {
+		row-gap: 6px;
+		@extend .file__header;
+		.file__download,
+		.file__delete {
+			height: 28px;
+		}
+	}
+	.file__img {
+		@extend .file__header;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
